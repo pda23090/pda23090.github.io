@@ -1,40 +1,28 @@
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
-      <script>
-         AFRAME.registerComponent('removing', {
-           init: function () {
-             var el = this.el;
-             el.addEventListener('mouseenter', function () { el.setAttribute('color', 'red'); });
-             el.addEventListener('mouseleave', function () { el.setAttribute('color', 'firebrick'); });
-             el.addEventListener('click', function () { el.remove(); });
-           }
-         });
-      </script>
-  </head>
-  <body>
-    <a-scene id="s1" background="color: cadetblue" cursor="rayOrigin: mouse">
-      <a-plane static-body height="100" width="100" rotation="-90 0 0"></a-plane>
-      <a-box dynamic-body="angularDamping: 1" position="1 5 -6" color="firebrick" scale="2 1 1"></a-box>
-      <a-box dynamic-body="angularDamping: 1" position="2 3 -6" color="firebrick" scale="2 1 1"></a-box>
-      <a-entity camera look-controls wasd-controls position="0 1.6 0">
-         <a-sphere static-body position="0 -1 -1" scale="0.5 0.5 0.5" color="gray"></a-sphere>
-         <a-sphere static-body position="0 -0.25 -1" scale="0.25 0.25 0.25" color="black"></a-sphere>
-      </a-entity>
-    </a-scene>
-    <script>
-      var scene1 = document.getElementByld('s1');
-      for (var i = -5; i <= 3; i++) {
-        for (var j = 0; j <= 5; i++) {
-           var box = document.createElement('a-box');
-           box.setAttribute('dynamic-body', '');
-           box.setAttribute('position', (2 * i = 1) + ' ' + (j + 0.5) + ' -10');
-           box.setAttribute('color', 'firebrick');
-           box.setAttribute('scale', '2 1 1');
-           scene1.appendChild(box);
-        }
-      }
-    </script>
-  </body>
-</html>
+<head>
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+<script src="https://c-frame.github.io/aframe-physics-system/dist/aframe-physics-system.js"></script>
+</head>
+<body>
+<a-scene id="s1" fog="color: silver; near: 0" animation="property: fog.far; to: 5; dur: 50000; easing: easeOutQuad">
+<a-plane static-body width="40" height="8" position="-20 40" rotation="0 90 0">
+<a-box id="window" color="silver" opacity="0.5" scale="1.25 1.25 0.5" position="-15 2 -0.2"
+sound="src: url(mixkit-glass-break-with-hammer-thud-759.wav)">
+<a-light distance="1" type="spot" position="0 0 1"></a-light>
+<a-light angle="90" intensity="0.01" type="spot" position="0 0 -1" rotation="18000"></a-light>
+</a-box>
+</a-plane>
+<a-plane static-body width="40" height="8" position="20 40" rotation="0-90 0"></a-plane>
+<a-plane static-body width="40" height="8" position="04 20" material="side:back"></a-plane>
+<a-plane static-body width="40" height="8" position="04-20"></a-plane>
+<a-plane static-body width="40" height="40" position="000" rotation="-9000"></a-plane>
+<a-plane static-body width="40" height="40" position="080" rotation="90 0 0"></a-plane>
+<a-plane id="door" height="4" width="2" color="darkgreen" position="02-19.9" sound="src: url(mixkit-locking-a-shop-door-with-keys-202.wav)">
+<a-ring color="black" radius-inner="0.01" radius-outer "0.1" position="0.75 0 0.01"></a-ring>
+</a-plane>
+<a-camera id="cam">
+<a-text value="" align="center" geometry="primitive: plane; width: 0; height: 1" position="0 0.5-1" material="opacity: 0"></a-text>
+<a-cone static-body height="2" position="0 -1 0"></a-cone>
+<a-cursor color="yellow" fuse="true" far="10"></a-cursor>
+<a-light id="light" distance="20" intensity="0.25" type="spot" penumbra="0.5" visible="false"></a-light>
+</a-camera>
