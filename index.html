@@ -6,6 +6,7 @@
 <body>
 <a-scene id="s1" fog="color: silver; near: 0" animation="property: fog.far; to: 5; dur: 50000; easing: easeOutQuad">
 <a-plane static-body width="40" height="8" position="-20 4 0" rotation="0 90 0">
+<a-text value="fragile" position="-15 1.5 -1" scale="0.5 0.5 0.5" color="white"></a-text>
 <a-box id="window" focusing color="silver" opacity="0.5" scale="1.25 1.25 0.5" position="-15 2 -0.2"
 sound="src: url(mixkit-glass-break-with-hammer-thud-759.wav)">
 <a-light distance="1" type="spot" position="0 0 1"></a-light>
@@ -69,8 +70,6 @@ document.getElementById('cam').setAttribute('position', pos);
 </a-cylinder>
 <a-sphere dynamic-body id="gem" radius="0.2" color="purple" focusing position="0 2 0" material="emissive: purple; emissiveIntensity: 0.8">
 </a-sphere>
-<a-box color="saddlebrown" position="-15 0.5 -0.2" depth="0.5" height="3" width="0.3" opacity="0.8" focusing>
-</a-box>
 <a-box dynamic-body id="table" color="brown" scale="3 0.2 3" position="-10 2 -10">
 <a-cylinder height="6" radius="0.03" position="-0.4 -3 -0.4"></a-cylinder>
 <a-cylinder height="6" radius="0.03" position="-0.4 -3 0.4"></a-cylinder>
