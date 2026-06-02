@@ -128,7 +128,7 @@ return;
 }
 var pos = document.getElementById('cam').getAttribute('position');
 if (el.id == "door") {
-if (!locked && time >= 0) { el.components.sound.playSound(); message = "Well done!"; }
+if (!locked && time >= 0) { el.components.sound.playSound(); message = "Well done, you escaped!"; }
 return;
  }
 if (el.id == "wrongdoor1") {
