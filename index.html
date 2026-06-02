@@ -107,11 +107,15 @@ if (!locked && time >= 0) { el.components.sound.playSound(); message = "Well don
 return;
  }
 if (el.id == "wrongdoor1") {
-if (!locked && time >= 0) { message = "Wrong door!"; }
+if (!locked && time >= 0) { message = "Wrong door!"; 
+setTimeout(function () { if (message == "Wrong door!") { message = ""; }}, 3000);
+}
 return;
  }
 if (el.id == "wrongdoor1" || el.id == "wrongdoor2") { 
-if (!locked && time >= 0) { message = "Wrong door!"; }
+if (!locked && time >= 0) { message = "Try another door"; 
+setTimeout(function () { if (message == "Try another door") { message = ""; }}, 3000);
+}
 return;
  }
 else if (el.id == "window") {
