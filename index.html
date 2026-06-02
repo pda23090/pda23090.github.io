@@ -84,6 +84,8 @@ for (var i = 0; i < 10; i++) {
 var t= document.getElementById('table').cloneNode(true);
 var x = Math.random() * 40 - 20;
 var z = Math.random() * 40 - 20;
+var tableColor = tableColors[Math.floor(Math.random() * tableColors.length)];
+t.setAttribute('color', tableColor);
 t.setAttribute('position', x + ' 2 ' + z);
 t.setAttribute('rotation', '0 ' + Math.random() * 90 + ' 0');
 scene1.appendChild(t);
