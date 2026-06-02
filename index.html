@@ -106,10 +106,12 @@ if (el.id == "door") {
 if (!locked && time >= 0) { el.components.sound.playSound(); message = "Well done!"; }
 return;
  }
-if (el.id == "wrongdoor1") { message = "Wrong door!";
+if (el.id == "wrongdoor1") {
+if (!locked && time >= 0) { message = "Wrong door!";}
 return;
  }
-if (el.id == "wrongdoor1" || el.id == "wrongdoor2") {  message = "Wrong door!";
+if (el.id == "wrongdoor1" || el.id == "wrongdoor2") { 
+if (!locked && time >= 0) { message = "Wrong door!";}
 return;
  }
 else if (el.id == "window") {
