@@ -76,7 +76,7 @@ document.getElementById('cam').setAttribute('position', pos);
 <a-cylinder height="8" radius="0.05" position="-0.4 -4 0.4"></a-cylinder>
 <a-cylinder height="19" radius="0.05" position="0.4 2 -0.4"></a-cylinder>
 <a-cylinder height="19" radius="0.05" position="0.4 2 0.4"></a-cylinder>
-<a-box dynamic-body id="chairback" color="brown" scale="0.05 5 1" position="0.4 8 0"></a-box>
+<a-box color="brown" scale="0.05 5 1" position="0.4 8 0"></a-box>
 </a-box>
   <script>
 var scene1 = document.getElementById('s1');
@@ -93,8 +93,6 @@ scene1.appendChild(t);
 }
 for (var i = 0; i < 20; i++) {
 var c = document.getElementById('chair').cloneNode(true);
-var chairbackColors = ["royalblue","gold","purple","orange","teal","limegreen","deeppink","brown"];
-c.setAttribute('color',chairbackColors[Math.floor(Math.random() * chairbackColors.length)]);
 var chairColors = ["royalblue","gold","purple","orange","teal","limegreen","deeppink","brown"];
 c.setAttribute('color',chairColors[Math.floor(Math.random() * chairColors.length)]);
 var x = Math.random() * 40 - 20;
