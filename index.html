@@ -20,6 +20,12 @@ sound="src: url(mixkit-glass-break-with-hammer-thud-759.wav)">
 <a-plane id="door" focusing height="4" width="2" color="darkgreen" position="0 2 -19.9" sound="src: url(mixkit-locking-a-shop-door-with-keys-202.wav)">
 <a-ring color="black" radius-inner="0.01" radius-outer="0.1" position="0.75 0 0.01"></a-ring>
 </a-plane>
+<a-plane id="wrongdoor1" focusing height="4" width="2" color="brown" position="-19.9 2 0" rotation="0 90 0">
+<a-ring color="black" radius-inner="0.01" radius-outer="0.1" position="0.75 0 0.01"></a-ring>
+</a-plane>
+<a-plane id="wrongdoor2" focusing height="4" width="2" color="brown" position="19.9 2 0" rotation="0 -90 0">
+<a-ring color="black" radius-inner="0.01" radius-outer="0.1" position="0.75 0 0.01"></a-ring>
+</a-plane>
 <a-camera id="cam">
 <a-text updating value="" align="center" geometry="primitive: plane; width: 0; height: 1" position="0 0.5 -1" material="opacity: 0"></a-text>
 <a-cone static-body height="2" position="0 -1 0"></a-cone>
@@ -98,6 +104,12 @@ el.addEventListener('mouseenter', function () {
 var pos = document.getElementById('cam').getAttribute('position');
 if (el.id == "door") {
 if (!locked && time >= 0) { el.components.sound.playSound(); message = "Well done!"; }
+return;
+ }
+if (el.id == "wrongdoor1") { message = "Wrong door!";
+return;
+ }
+if (el.id == "wrongdoor1" || el.id == "wrongdoor2") {  message = "Wrong door!";
 return;
  }
 else if (el.id == "window") {
