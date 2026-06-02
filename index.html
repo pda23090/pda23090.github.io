@@ -94,7 +94,8 @@ scene1.appendChild(t);
 for (var i = 0; i < 20; i++) {
 var c = document.getElementById('chair').cloneNode(true);
 var chairColors = ["royalblue","gold","purple","orange","teal","limegreen","deeppink","brown"];
-c.setAttribute('color',chairColors[Math.floor(Math.random() * chairColors.length)]);
+var chairColor = chairColors[Math.floor(Math.random() * chairColors.length)];
+c.setAttribute('color', chairColor);
 var x = Math.random() * 40 - 20;
 var z = Math.random() * 40 - 20;
 c.setAttribute('position', x +' 6 ' + z);
