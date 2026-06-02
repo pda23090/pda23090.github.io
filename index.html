@@ -82,8 +82,6 @@ document.getElementById('cam').setAttribute('position', pos);
 var scene1 = document.getElementById('s1');
 for (var i = 0; i < 10; i++) {
 var t= document.getElementById('table').cloneNode(true);
-var tableColors = ["red","royalblue","gold","purple","orange","teal","limegreen","deeppink"];
-c.setAttribute('color',tableColors[Math.floor(Math.random() * tableColors.length)]);
 var x = Math.random() * 40 - 20;
 var z = Math.random() * 40 - 20;
 t.setAttribute('position', x + ' 2 ' + z);
