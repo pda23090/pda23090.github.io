@@ -115,8 +115,8 @@ setTimeout(function () { if (message == "Wrong door!") { message = ""; }}, 3000)
 }
 return;
  }
-if (el.id == "wrongdoor1" || el.id == "wrongdoor2") { 
-if (!locked && time >= 0) { message = "Try another door"; 
+if (el.id == "wrongdoor2") {
+if (!locked && time >= 0) {  message = "Try another door"; 
 setTimeout(function () { if (message == "Try another door") { message = ""; }}, 3000);
 }
 return;
