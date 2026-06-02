@@ -123,7 +123,7 @@ return;
  }
 if (el.id == "wrongdoor3") {
 if (!locked && time >= 0) { message = "This option is now gone";
-setTimeout(function () { if (message == "This option is now gone") { message = ""; }}, 3000);
+setTimeout(function () { if (message === "This option is now gone") {message = ""; }}, 3000);
 }
 el.removeAttribute('dynamic-body');
 el.setAttribute('animation', 'property: position; to:' + pos.x + ' 1 ' + pos.z);
