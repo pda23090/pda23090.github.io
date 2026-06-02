@@ -80,7 +80,7 @@ document.getElementById('cam').setAttribute('position', pos);
 </a-box>
   <script>
 var scene1 = document.getElementById('s1');
-var tableColors = ["brown","saddlebrown","peru","chocolate","tan","maroon","darkolivegreen"];
+var tableColors = ["brown","purple","gold","royalblue","orange","teal","deeppink"];
 for (var i = 0; i < 10; i++) {
 var t= document.getElementById('table').cloneNode(true);
 var x = Math.random() * 40 - 20;
@@ -93,7 +93,7 @@ scene1.appendChild(t);
 }
 for (var i = 0; i < 20; i++) {
 var c = document.getElementById('chair').cloneNode(true);
-var chairColors = ["red","royalblue","gold","purple","orange","teal","limegreen","deeppink"];
+var chairColors = ["royalblue","gold","purple","orange","teal","limegreen","deeppink","brown"];
 c.setAttribute('color',chairColors[Math.floor(Math.random() * chairColors.length)]);
 var x = Math.random() * 40 - 20;
 var z = Math.random() * 40 - 20;
