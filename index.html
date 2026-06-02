@@ -90,9 +90,6 @@ scene1.appendChild(t);
 }
 for (var i = 0; i < 20; i++) {
 var c = document.getElementById('chair').cloneNode(true);
-var chairColor = chairColors[Math.floor(Math.random() * chairColors.length)];
-c.setAttribute('color', chairColor);
-c.querySelectorAll('a-box').forEach(function(part) { part.setAttribute('color', chairColor); });
 var chairColors = ["red","royalblue","gold","purple","orange","teal","limegreen","deeppink"];
 c.setAttribute('color',chairColors[Math.floor(Math.random() * chairColors.length)]);
 var x = Math.random() * 40 - 20;
