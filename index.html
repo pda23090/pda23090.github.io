@@ -122,7 +122,7 @@ setTimeout(function () { if (message == "Try another door") { message = ""; }}, 
 return;
  }
 if (el.id == "wrongdoor3") {
-if (!locked && time >= 0) { message = "This option is now gone";
+if (locked) return; { message = "This option is now gone";
 setTimeout(function () { if (message === "This option is now gone") {message = ""; }}, 3000);
 }
 el.removeAttribute('dynamic-body');
