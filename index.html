@@ -94,7 +94,7 @@ document.getElementById('cam').setAttribute('position', pos);
   <script>
 var scene1 = document.getElementById('s1');
 var tableColors = ["brown","purple","gold","royalblue","orange","teal","deeppink","darkgreen","violet","darkorange"];
-for (var i = 0; i < 20; i++) {
+for (var i = 0; i < 15; i++) {
 var t= document.getElementById('table').cloneNode(true);
 var x = Math.random() * 40 - 20;
 var z = Math.random() * 40 - 20;
@@ -116,7 +116,7 @@ c.setAttribute('position', x +' 6 ' + z);
 scene1.appendChild(c);
 var scene1 = document.getElementById('s1');
 }  
-for (var i = 0; i < 20; i++) {
+for (var i = 0; i < 25; i++) {
 var b = document.getElementById('barrel').cloneNode(true);
 var barrelColors = ["sienna", "brown", "maroon", "chocolate"];
 b.setAttribute('color', barrelColors[Math.floor(Math.random() * barrelColors.length)]);
