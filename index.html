@@ -92,7 +92,7 @@ document.getElementById('cam').setAttribute('position', pos);
   <script>
 var scene1 = document.getElementById('s1');
 var tableColors = ["brown","purple","gold","royalblue","orange","teal","deeppink","darkgreen","violet","darkorange"];
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 15; i++) {
 var t= document.getElementById('table').cloneNode(true);
 var x = Math.random() * 40 - 20;
 var z = Math.random() * 40 - 20;
@@ -102,7 +102,7 @@ t.setAttribute('position', x + ' 2 ' + z);
 t.setAttribute('rotation', '0 ' + Math.random() * 90 + ' 0');
 scene1.appendChild(t);
 }
-for (var i = 0; i < 20; i++) {
+for (var i = 0; i < 25; i++) {
 var c = document.getElementById('chair').cloneNode(true);
 var chairColors = ["royalblue","gold","purple","orange","teal","limegreen","deeppink","brown","darkgreen","magenta","cyan"];
 var chairColor = chairColors[Math.floor(Math.random() * chairColors.length)];
@@ -114,7 +114,7 @@ c.setAttribute('position', x +' 6 ' + z);
 scene1.appendChild(c);
 var scene1 = document.getElementById('s1');
 }  
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 20; i++) {
 var b = document.getElementById('barrel').cloneNode(true);
 var barrelColors = ["sienna", "brown", "maroon", "chocolate"];
 b.setAttribute('color', barrelColors[Math.floor(Math.random() * barrelColors.length)]);
