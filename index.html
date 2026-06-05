@@ -5,9 +5,9 @@
 </head>
 <body>
 <a-scene id="s1" fog="color: silver; near: 0" animation="property: fog.far; to: 5; dur: 50000; easing: easeOutQuad">
-  <a-entity id="gasSound"
-  sound="src: url(sounds/soundreality-gas-stove-burner-450981.mp3); autoplay: true; loop: true; volume: 0.5">
-</a-entity>
+<a-entity id="gasSound"
+sound="src: url(sounds/soundreality-gas-stove-burner-450981.mp3); autoplay: false; loop: true; volume: 0.5"
+></a-entity>
 <a-plane static-body width="40" height="8" position="-20 4 0" rotation="0 90 0">
 <a-box id="window" focusing color="silver" opacity="0.5" scale="1.25 1.25 0.5" position="-15 2 -0.2"
 sound="src: url(sounds/mixkit-glass-break-with-hammer-thud-759.wav)">
@@ -35,6 +35,7 @@ sound="src: url(sounds/mixkit-locking-a-shop-door-with-keys-202.wav)">
 <a-ring color="black" radius-inner="0.01" radius-outer="0.1" position="0.75 0 0.01"></a-ring>
 </a-plane>
 <a-camera id="cam">
+<a-entity id="audioStart"></a-entity>
 <a-text updating value="" align="center" position="0 0.5 -1" scale="0.45 0.45 0.45">
 </a-text>
 <a-cone static-body height="2" position="0 -1 0"></a-cone>
@@ -44,6 +45,10 @@ sound="src: url(sounds/mixkit-locking-a-shop-door-with-keys-202.wav)">
   <script>
 var locked = true, tool = false, gas = true, message = "", time = 6000;
 var gemFound = false;
+document.addEventListener('click', function () {
+let gasSound = document.querySelector('#gasSound');
+if (gasSound && gasSound.components.sound) { gasSound.components.sound.playSound();}
+}, { once: true });  
 AFRAME.registerComponent('updating', {
 tick: function () {
 if (gas) time--;
