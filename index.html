@@ -145,7 +145,13 @@ document.getElementById('torch').setAttribute('position', (Math.random() * 30 - 
 document.getElementById('key').setAttribute('position', (Math.random() * 30 - 15) + ' 1 ' + (Math.random() * 30 - 15));
 document.getElementById('gem').setAttribute('position', (Math.random() * 30 - 15) + ' 2 ' + (Math.random() * 30 - 15));
 </script>
-<script>
+ <script>
+  function playPickup() {
+  const pickup = document.querySelector('#pickupSound');
+  if (pickup && pickup.components && pickup.components.sound) {
+    pickup.components.sound.stopSound();
+    pickup.components.sound.playSound(); }
+}
   AFRAME.registerComponent('focusing', {
 init: function () {
 var el = this.el;
@@ -178,17 +184,14 @@ setTimeout(function () { if (message == "Try another door") { message = ""; }}, 
 return;
  }
 if (el.id == "wrongdoor3") {
-if (locked) return; { message = "This option is now gone";
-const pickup = document.querySelector('#pickupSound');
-  if (pickup && pickup.components && pickup.components.sound) {
-    pickup.components.sound.stopSound();
-    pickup.components.sound.playSound();
-}
-setTimeout(function () { if (message === "This option is now gone") {message = ""; }}, 3000);
-}
-el.removeAttribute('dynamic-body');
-el.setAttribute('animation', 'property: position; to:' + pos.x + ' 1 ' + pos.z);
-return;
+  if (locked) return;
+  message = "This option is now gone";
+  setTimeout(function () {
+    if (message === "This option is now gone") message = "";
+  }, 3000);
+  el.removeAttribute('dynamic-body');
+  el.setAttribute('animation', 'property: position; to:' + pos.x + ' 1 ' + pos.z);
+  return;
 }
 else if (el.id == "window") {
 if (tool) {
@@ -205,9 +208,15 @@ return;
  }
 el.removeAttribute('dynamic-body');
 el.setAttribute('animation', 'property: position; to:' + pos.x + ' 1 ' + pos.z);
-if (el.id == "torch") document.getElementById('light').setAttribute('animation', 'property: visible; to: true');
-else if (el.id == "key") locked = false;
-else if (el.id == "hammer") tool = true;
+if (el.id == "torch") { document.getElementById('light').setAttribute('animation', 'property: visible; to: true');
+playPickup();
+   }                   
+else if (el.id == "key") { locked = false;
+playPickup(); 
+   }                       
+else if (el.id == "hammer") { tool = true;
+playPickup();
+   }                         
 setTimeout(function () { el.remove(); }, 3000);
  });
 }
