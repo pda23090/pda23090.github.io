@@ -179,7 +179,11 @@ return;
  }
 if (el.id == "wrongdoor3") {
 if (locked) return; { message = "This option is now gone";
-document.querySelector('#pickupSound').components.sound.playSound();
+const pickup = document.querySelector('#pickupSound');
+  if (pickup && pickup.components && pickup.components.sound) {
+    pickup.components.sound.stopSound();
+    pickup.components.sound.playSound();
+}
 setTimeout(function () { if (message === "This option is now gone") {message = ""; }}, 3000);
 }
 el.removeAttribute('dynamic-body');
@@ -204,6 +208,12 @@ el.setAttribute('animation', 'property: position; to:' + pos.x + ' 1 ' + pos.z);
 if (el.id == "torch") document.getElementById('light').setAttribute('animation', 'property: visible; to: true');
 else if (el.id == "key") locked = false;
 else if (el.id == "hammer") tool = true;
+const pickup = document.querySelector('#pickupSound');
+if (pickup && pickup.components && pickup.components.sound) {
+    pickup.components.sound.stopSound();
+    pickup.components.sound.playSound();
+  }
+}
 setTimeout(function () { el.remove(); }, 3000);
  });
 }
