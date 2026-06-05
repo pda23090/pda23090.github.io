@@ -180,10 +180,8 @@ if (tool) {
 document.querySelector('a-scene').removeAttribute('animation');
 document.querySelector('a-scene').setAttribute('animation', 'property: fog.far; to: 1000; dur: 60000');
 gas = false;
-let gasSound = document.querySelector('#gasSound');
-if (gasSound && gasSound.components.sound) {
-gasSound.components.sound.stopSound();
-}
+document.querySelector('#gasSound').setAttribute('sound', 'autoplay: false');
+document.querySelector('#gasSound').components.sound.stopSound();
 el.components.sound.playSound(); el.setAttribute('blending', 'subtractive');
  }
 return;
