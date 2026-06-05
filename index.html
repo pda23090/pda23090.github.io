@@ -6,7 +6,7 @@
 <body>
 <a-scene id="s1" fog="color: silver; near: 0" animation="property: fog.far; to: 5; dur: 50000; easing: easeOutQuad">
   <a-entity id="gasSound"
-  sound="src: url(sounds/gas-leak.mp3); autoplay: true; loop: true; volume: 0.5">
+  sound="src: url(sounds/soundreality-gas-stove-burner-450981.mp3); autoplay: true; loop: true; volume: 0.5">
 </a-entity>
 <a-plane static-body width="40" height="8" position="-20 4 0" rotation="0 90 0">
 <a-box id="window" focusing color="silver" opacity="0.5" scale="1.25 1.25 0.5" position="-15 2 -0.2"
@@ -180,15 +180,10 @@ if (tool) {
 document.querySelector('a-scene').removeAttribute('animation');
 document.querySelector('a-scene').setAttribute('animation', 'property: fog.far; to: 1000; dur: 60000');
 gas = false;
-let gasEl = document.querySelector('#gasSound');
-let vol = 0.5;
-let fade = setInterval(() => {vol -= 0.05;
-if (vol <= 0) {gasEl.components.sound.stopSound(); clearInterval(fade);} 
-else {
-gasEl.setAttribute('sound', 'volume: ' + vol);
-  }
-}, 100);
-document.querySelector('#gasSound').components.sound.stopSound(); 
+let gasSound = document.querySelector('#gasSound');
+if (gasSound && gasSound.components.sound) {
+gasSound.components.sound.stopSound();
+}
 el.components.sound.playSound(); el.setAttribute('blending', 'subtractive');
  }
 return;
